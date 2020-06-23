@@ -36,48 +36,55 @@ public class UserPost {
         return id;
     }
 
-    public void setId(Long id) {
+    public UserPost setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getTittle() {
         return tittle;
     }
 
-    public void setTittle(String tittle) {
+    public UserPost setTittle(String tittle) {
         this.tittle = tittle;
+        return this;
     }
 
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public UserPost setContent(String content) {
         this.content = content;
+        return this;
     }
 
     public String getAuthorName() {
         return authorName;
     }
 
-    public void setAuthorName(String authorName) {
+    public UserPost setAuthorName(String authorName) {
         this.authorName = authorName;
+        return this;
+
     }
 
     public Instant getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(Instant createdOn) {
+    public UserPost setCreatedOn(Instant createdOn) {
         this.createdOn = createdOn;
+        return this;
     }
 
     public Instant getUpdatedOn() {
         return updatedOn;
     }
 
-    public void setUpdatedOn(Instant updatedOn) {
+    public UserPost setUpdatedOn(Instant updatedOn) {
         this.updatedOn = updatedOn;
+        return this;
     }
 
     @Override

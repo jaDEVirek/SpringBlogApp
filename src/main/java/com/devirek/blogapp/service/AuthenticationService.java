@@ -27,9 +27,9 @@ public class AuthenticationService {
     @Transactional
     public void signUp(RegisterRequestDTO registerRequest) {
         User user = new User();
-        user.setUserName(registerRequest.getUserName());
-        user.setUserEmail(registerRequest.getEmail());
-        user.setUserPassword(encodePassword(registerRequest.getPassword()));
+        user.setUserName(registerRequest.getUserName())
+            .setUserEmail(registerRequest.getEmail())
+            .setUserPassword(encodePassword(registerRequest.getPassword()));
 
         userRepository.save(user);
     }
