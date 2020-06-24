@@ -1,7 +1,7 @@
 package com.devirek.blogapp.configuration;
 
 
-import com.devirek.blogapp.exceptions.BlogAppSecutiryException;
+import com.devirek.blogapp.exceptions.BlogAppSecurityException;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -23,7 +23,7 @@ public class JWTDataProvider {
             keyStore = KeyStore.getInstance("JKS");
             keyStore.load(resourceAsStream, "secret".toCharArray());
         } catch (IOException | KeyStoreException | NoSuchAlgorithmException | CertificateException e) {
-            throw new BlogAppSecutiryException("Exception occured while loading keystore");
+            throw new BlogAppSecurityException("Exception occured while loading keystore");
         }
     }
 }

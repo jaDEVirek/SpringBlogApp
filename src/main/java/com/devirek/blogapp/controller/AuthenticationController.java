@@ -1,6 +1,7 @@
 package com.devirek.blogapp.controller;
 
 
+import com.devirek.blogapp.dto.LoginRequestDTO;
 import com.devirek.blogapp.dto.RegisterRequestDTO;
 import com.devirek.blogapp.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class AuthenticationController {
     public ResponseEntity signUp(@RequestBody RegisterRequestDTO registerRequest) {
         authenticationService.signUp(registerRequest);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public void login(@RequestBody LoginRequestDTO loginRequest) {
+
     }
 }
 
