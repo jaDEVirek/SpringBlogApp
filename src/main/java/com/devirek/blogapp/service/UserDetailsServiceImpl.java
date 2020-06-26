@@ -17,7 +17,7 @@ import java.util.Collections;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private UserRepositoryInterface userRepository;
+    private final UserRepositoryInterface userRepository;
 
     @Autowired
     public UserDetailsServiceImpl(UserRepositoryInterface userRepository) {
@@ -28,7 +28,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
         UserModel user = userRepository.findByUserName(userName)
-                                       .orElseThrow(() -> new UsernameNotFoundException("No user found with given name : " + userName));
+                                       .orElseThrow(() -> new UsernameNotFoundException(
+                                               "No user found with given name : " + userName));
         return new User(user.getUserName(), user.getUserPassword(), getAuthorities("ROLE_USER"));
     }
 
