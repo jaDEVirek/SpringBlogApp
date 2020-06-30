@@ -5,8 +5,14 @@ import {AppComponent} from './app.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import { ServiceComponent } from './auth/service/service.component';
+import {ServiceComponent} from './auth/service/service.component';
+import {LoginComponent} from './auth/login/login.component';
+import {RegisterSuccessComponent} from './auth/register-success/register-success.component';
+import {Ng2Webstorage} from 'ngx-webstorage';
+import {ApplicationRoutingModule} from './application-routing.module';
+import {HeaderComponent} from './header/header.component';
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +24,15 @@ import { ServiceComponent } from './auth/service/service.component';
   ],
   imports: [
     BrowserModule,
-    AplicationRoutingModule,
+    ApplicationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2Webstorage.forRoot(),
+
     RouterModule.forRoot([
-        (path: 'register', component: RegisterComponent),
-        (path: 'login', component: LoginComponent),
-        (path: 'register-success', component: RegisterSuccessComponent),
+        {path: 'register', component: RegisterComponent},
+        {path: 'login', component: LoginComponent},
+        {path: 'register-success', component: RegisterSuccessComponent}
       ]
     )
   ],
