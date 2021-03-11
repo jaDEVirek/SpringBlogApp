@@ -9,6 +9,7 @@ public class BlogappApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogappApplication.class, args);
 
+        System.out.println(" ".length());
     }
 
 }
